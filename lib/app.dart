@@ -7,11 +7,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: Themes.lightThemeData,
-        home: Scaffold(
-          appBar: AppBar(title: const Text("Everytime")),
-          body: const HomeScreen(),
-        ));
+    return MaterialApp(theme: Themes.lightThemeData, home: const HomeScreen());
   }
 }
