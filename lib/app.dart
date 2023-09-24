@@ -1,4 +1,5 @@
 import 'package:everytime_flutter/screens/home_screen.dart';
+import 'package:everytime_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -7,9 +8,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: Themes.lightThemeData,
         home: Scaffold(
-      appBar: AppBar(title: const Text("Everytime")),
-      body: const HomeScreen(),
-    ));
+          appBar: AppBar(title: const Text("Everytime")),
+          body: const HomeScreen(),
+        ));
   }
 }
