@@ -2,12 +2,12 @@ import 'package:everytime_flutter/themes/color.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavigationBar extends StatelessWidget {
+  final String currentTab;
+
   const CustomNavigationBar({
     Key? key,
-    required this.current_tab,
+    required this.currentTab,
   }) : super(key: key);
-
-  final String current_tab;
 
   static const List<Map<String, dynamic>> tabs = [
     {
@@ -45,7 +45,7 @@ class CustomNavigationBar extends StatelessWidget {
                 (tab) => Icon(
                   tab["icon"],
                   size: 36,
-                  color: current_tab == tab["name"]
+                  color: currentTab == tab["name"]
                       ? CustomColors.black
                       : CustomColors.gray30,
                 ),
