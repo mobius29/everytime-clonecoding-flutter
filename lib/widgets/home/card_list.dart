@@ -10,7 +10,8 @@ class CardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 200,
       child: ListView(
         scrollDirection: Axis.horizontal,
