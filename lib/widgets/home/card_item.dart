@@ -55,7 +55,10 @@ class CardItem extends StatelessWidget {
                 ),
               ],
             ),
-            Container(margin: const EdgeInsets.only(top: 16), child: child)
+            Container(
+              margin: const EdgeInsets.only(top: 16),
+              child: child,
+            )
           ],
         ),
       ),

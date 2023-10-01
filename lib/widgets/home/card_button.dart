@@ -9,7 +9,7 @@ class CardButton extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  final Icon icon;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +35,11 @@ class CardButton extends StatelessWidget {
                 color: CustomColors.gray90,
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 4),
-              child: Icon(
-                icon.icon,
-                size: 16,
-                color: CustomColors.gray70,
-              ),
+            const SizedBox(width: 4),
+            Icon(
+              icon,
+              size: 16,
+              color: CustomColors.gray70,
             ),
           ],
         ),
