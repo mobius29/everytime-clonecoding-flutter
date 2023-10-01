@@ -1,5 +1,6 @@
 import 'package:everytime_flutter/widgets/home/appbar.dart';
 import 'package:everytime_flutter/widgets/home/card_list.dart';
+import 'package:everytime_flutter/widgets/home/link_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,10 +10,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: HomeAppBar(),
-      body: Column(
-        children: [
-          CardList(),
-        ],
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          children: [
+            CardList(),
+            LinkList(),
+          ],
+        ),
       ),
     );
   }

@@ -31,15 +31,15 @@ class Themes {
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: CustomColors.red,
     primaryContainer: CustomColors.red,
-    secondary: CustomColors.blue,
-    secondaryContainer: CustomColors.blue,
+    secondary: CustomColors.blue40,
+    secondaryContainer: CustomColors.blue40,
     background: CustomColors.white,
     surface: CustomColors.gray20,
     onBackground: CustomColors.white,
     error: _lightFillColor,
     onError: _lightFillColor,
     onPrimary: _lightFillColor,
-    onSecondary: CustomColors.blue,
+    onSecondary: CustomColors.blue40,
     onSurface: CustomColors.gray20,
     brightness: Brightness.light,
   );
