@@ -1,6 +1,7 @@
 import 'package:everytime_flutter/widgets/common/custom_navigation_bar.dart';
 import 'package:everytime_flutter/widgets/home/appbar.dart';
 import 'package:everytime_flutter/widgets/home/card_list.dart';
+import 'package:everytime_flutter/widgets/home/favorite_board.dart';
 import 'package:everytime_flutter/widgets/home/link_list.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +14,14 @@ class HomeScreen extends StatelessWidget {
       appBar: HomeAppBar(),
       body: SizedBox(
         width: double.infinity,
-        child: Column(
-          children: [
-            CardList(),
-            LinkList(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CardList(),
+              LinkList(),
+              FavoriteBoard(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: CustomNavigationBar(current_tab: "home"),
