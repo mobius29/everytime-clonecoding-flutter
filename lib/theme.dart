@@ -34,13 +34,13 @@ class Themes {
     secondary: CustomColors.blue,
     secondaryContainer: CustomColors.blue,
     background: CustomColors.white,
-    surface: CustomColors.gray100,
+    surface: CustomColors.gray20,
     onBackground: CustomColors.white,
     error: _lightFillColor,
     onError: _lightFillColor,
     onPrimary: _lightFillColor,
     onSecondary: CustomColors.blue,
-    onSurface: CustomColors.gray100,
+    onSurface: CustomColors.gray20,
     brightness: Brightness.light,
   );
 }
