@@ -6,12 +6,12 @@ class CardItem extends StatelessWidget {
     Key? key,
     required this.title,
     required this.subTitle,
-    this.child,
+    required this.child,
   }) : super(key: key);
 
   final String title;
   final String subTitle;
-  final Widget? child;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
