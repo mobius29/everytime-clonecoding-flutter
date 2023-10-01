@@ -1,8 +1,8 @@
-import 'package:everytime_flutter/widgets/home/card_button.dart';
-import 'package:everytime_flutter/widgets/home/card_button_list.dart';
-import 'package:everytime_flutter/widgets/home/card_item.dart';
-import 'package:everytime_flutter/widgets/home/card_timetable.dart';
-import 'package:everytime_flutter/widgets/home/card_timetable_list.dart';
+import 'package:everytime_flutter/widgets/home/card/card_button.dart';
+import 'package:everytime_flutter/widgets/home/card/card_button_list.dart';
+import 'package:everytime_flutter/widgets/home/card/card_item.dart';
+import 'package:everytime_flutter/widgets/home/card/card_timetable.dart';
+import 'package:everytime_flutter/widgets/home/card/card_timetable_list.dart';
 import 'package:flutter/material.dart';
 
 class CardList extends StatelessWidget {
