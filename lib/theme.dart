@@ -29,8 +29,8 @@ class Themes {
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: CustomColors.red,
-    primaryContainer: CustomColors.red,
+    primary: CustomColors.black,
+    primaryContainer: CustomColors.black,
     secondary: CustomColors.blue40,
     secondaryContainer: CustomColors.blue40,
     background: CustomColors.white,
