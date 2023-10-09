@@ -12,8 +12,14 @@ class Timetable extends StatelessWidget {
   final List<int> classIds;
   Timetable({Key? key, required this.classIds}) : super(key: key);
 
-  static double horizontalMargin = 16;
-  static double verticalMargin = 24;
+  static const double horizontalMargin = 16;
+  static const double verticalMargin = 24;
+
+  static const double timeWidth = 20;
+  static const double dayHeight = 20;
+
+  static const double tableItemHeight = 90;
+  static const double tableMinuteInterval = 60 / 5;
 
   final List<Color> colorList = [
     Colors.red.shade100,
@@ -30,7 +36,11 @@ class Timetable extends StatelessWidget {
   Tuple<int, int, int> getTableValues(List<ClassTime> classTimes) {
     return classTimes.fold(
       (9, 16, 4),
-      (acc, e) => (min(acc.$1, e.startTime ~/ 12), max(acc.$2, e.endTime ~/ 12), max(acc.$3, e.day.index)),
+      (acc, e) => (
+        min(acc.$1, e.startTime ~/ tableMinuteInterval),
+        max(acc.$2, e.endTime ~/ tableMinuteInterval),
+        max(acc.$3, e.day.index)
+      ),
     );
   }
 
@@ -40,7 +50,7 @@ class Timetable extends StatelessWidget {
       children: days
           .map((text) => Container(
               alignment: Alignment.center,
-              height: 20,
+              height: dayHeight,
               child: Text(
                 text,
                 style: const TextStyle(
@@ -60,7 +70,7 @@ class Timetable extends StatelessWidget {
       children: items
           .map((text) => Container(
                 alignment: Alignment.topRight,
-                height: 90,
+                height: tableItemHeight,
                 child: Text(text, style: const TextStyle(fontSize: 12)),
               ))
           .toList(),
@@ -72,9 +82,11 @@ class Timetable extends StatelessWidget {
         .map(
           (e) => Container(
               width: itemWidth,
-              height: (e.endTime - e.startTime) * 90 / 12,
-              margin:
-                  EdgeInsets.fromLTRB(20 + itemWidth * e.day.index, (e.startTime - minHour * 12) * 90 / 12 + 20, 0, 0),
+              height: (e.endTime - e.startTime) * tableItemHeight / tableMinuteInterval,
+              margin: EdgeInsets.only(
+                left: 20 + itemWidth * e.day.index,
+                top: (e.startTime - minHour * tableMinuteInterval) * tableItemHeight / tableMinuteInterval + dayHeight,
+              ),
               decoration: BoxDecoration(color: color),
               child: Container(
                 margin: const EdgeInsets.all(4),
@@ -106,10 +118,10 @@ class Timetable extends StatelessWidget {
     final dayList = Day.values.sublist(0, cols);
     final List<int> rows = List.generate(maxHour - minHour + 1, (index) => index + minHour);
 
-    final itemWidth = (MediaQuery.of(context).size.width - 20) / cols;
+    final itemWidth = (MediaQuery.of(context).size.width - timeWidth) / cols;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: horizontalMargin, vertical: verticalMargin),
+      margin: const EdgeInsets.symmetric(horizontal: horizontalMargin, vertical: verticalMargin),
       width: double.infinity,
       child: Stack(
         children: [
@@ -118,7 +130,7 @@ class Timetable extends StatelessWidget {
               color: Colors.grey.shade400,
               borderRadius: BorderRadius.circular(16),
             ),
-            columnWidths: const {0: FixedColumnWidth(20)},
+            columnWidths: const {0: FixedColumnWidth(timeWidth)},
             children: [
               getTableHeader(dayList),
               ...rows.map((time) => getEmptyTableRow(time, maxDay)),
