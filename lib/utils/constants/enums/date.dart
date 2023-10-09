@@ -1,18 +1,16 @@
 enum Day {
-  mon("월", 0),
-  tue("화", 1),
-  wed("수", 2),
-  thu("목", 3),
-  fri("금", 4),
-  sat("토", 5),
-  sun("일", 6);
+  mon("월"),
+  tue("화"),
+  wed("수"),
+  thu("목"),
+  fri("금"),
+  sat("토"),
+  sun("일");
 
   final String dayName;
-  final int num;
-  const Day(this.dayName, this.num);
+  const Day(this.dayName);
 
   String getDayName() => dayName;
-  int getDayNum() => num;
 }
 
 enum Semester {

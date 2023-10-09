@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:everytime_flutter/models/timetable.dart';
 import 'package:everytime_flutter/utils/constants/enums/date.dart';
 
@@ -16,8 +18,8 @@ ClassItem artificialIntelligence = const ClassItem(
   courseName: "인공지능",
   professor: "김현우",
   classTimes: [
-    ClassTime(Day.tue, 228, 243),
-    ClassTime(Day.thu, 228, 243),
+    ClassTime(Day.tue, 154, 243),
+    ClassTime(Day.thu, 154, 243),
   ],
 );
 

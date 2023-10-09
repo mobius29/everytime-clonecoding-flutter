@@ -9,8 +9,7 @@ class TimetableScreen extends StatelessWidget {
   final int id;
   TimetableScreen({Key? key, required this.id}) : super(key: key);
 
-  late final TimetableItem timetableItem =
-      listTimetable.firstWhere((item) => item.id == id);
+  late final TimetableItem timetableItem = listTimetable.firstWhere((item) => item.id == id);
 
   @override
   Widget build(BuildContext context) {
