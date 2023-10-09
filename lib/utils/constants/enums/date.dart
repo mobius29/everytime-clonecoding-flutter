@@ -23,4 +23,6 @@ enum Semester {
   const Semester({
     required this.semester,
   });
+
+  String getSemester() => semester;
 }

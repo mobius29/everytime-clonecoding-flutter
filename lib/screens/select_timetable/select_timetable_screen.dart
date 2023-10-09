@@ -1,3 +1,4 @@
+import 'package:everytime_flutter/mocks/timetable/timetableList.dart';
 import 'package:everytime_flutter/widgets/select_timetable/appbar.dart';
 import 'package:everytime_flutter/widgets/select_timetable/timetable_block.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +9,18 @@ class SelectTimetableScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: SelectTimetableScreenAppbar(),
-      body: SingleChildScrollView(child: TimetableBlock()),
+    return Scaffold(
+      appBar: const SelectTimetableScreenAppbar(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: listTimetableList
+              .map(
+                (e) =>
+                    Padding(padding: const EdgeInsets.symmetric(vertical: 2), child: TimetableBlock(timetableList: e)),
+              )
+              .toList(),
+        ),
+      ),
     );
   }
 }
