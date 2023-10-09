@@ -6,6 +6,7 @@ import 'package:everytime_flutter/widgets/home/link_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const routerName = "/";
   const HomeScreen({Key? key}) : super(key: key);
 
   @override

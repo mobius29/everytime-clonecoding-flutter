@@ -1,5 +1,5 @@
 import 'package:everytime_flutter/screens/home_screen.dart';
-import 'package:everytime_flutter/screens/timetable_screen.dart';
+import 'package:everytime_flutter/screens/timetable/timetable_screen.dart';
 import 'package:everytime_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +8,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: Themes.lightThemeData,
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const HomeScreen(),
-          '/timetable': (context) => TimetableScreen(id: 0),
-        });
+    return MaterialApp(theme: Themes.lightThemeData, initialRoute: '/', routes: {
+      '/': (context) => const HomeScreen(),
+      TimetableScreen.routerName: (context) => const TimetableScreen(),
+    });
   }
 }
