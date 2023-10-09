@@ -1,3 +1,4 @@
+import 'package:everytime_flutter/screens/select_timetable/select_timetable_screen.dart';
 import 'package:everytime_flutter/themes/color.dart';
 import 'package:everytime_flutter/utils/constants/enums/date.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,9 @@ class TimetableAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(Icons.settings_outlined),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, SelectTimetableScreen.routerName);
+          },
           icon: const Icon(
             Icons.list_outlined,
           ),
