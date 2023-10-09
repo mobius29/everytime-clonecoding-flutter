@@ -1,13 +1,15 @@
+import 'package:everytime_flutter/mocks/timetable/classItem.dart';
 import 'package:everytime_flutter/models/timetable.dart';
+import 'package:everytime_flutter/widgets/timetable/table/header.dart';
 import 'package:flutter/material.dart';
 
 class Timetable extends StatelessWidget {
-  final TimetableData timetable;
+  final List<int> classIds;
+  Timetable({Key? key, required this.classIds}) : super(key: key);
 
-  const Timetable({
-    Key? key,
-    required this.timetable,
-  }) : super(key: key);
+  late final List<ClassItem> classes = classIds
+      .map((id) => listClass.firstWhere((item) => item.id == id))
+      .toList();
 
   @override
   Widget build(BuildContext context) {
@@ -24,64 +26,9 @@ class Timetable extends StatelessWidget {
         },
         children: [
           TableRow(
-            children: [
-              Container(),
-              Container(
-                alignment: Alignment.center,
-                child: const Text(
-                  "월",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Text(
-                  "화",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Text(
-                  "수",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Text(
-                  "목",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Text(
-                  "금",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-            ],
+            children: ["", "월", "화", "수", "목", "금"]
+                .map((text) => TimetableHeaderItem(text: text))
+                .toList(),
           ),
         ],
       ),

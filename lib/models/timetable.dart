@@ -1,41 +1,57 @@
-import 'package:everytime_flutter/utils/constants/enums/day.dart';
+import 'package:everytime_flutter/utils/constants/enums/date.dart';
 
 class ClassTime {
   final Day day;
-  final int startHour;
-  final int startMinute;
-  final int endHour;
-  final int endMinute;
+  final int startTime;
+  final int endTime;
 
   const ClassTime(
     this.day,
-    this.startHour,
-    this.startMinute,
-    this.endHour,
-    this.endMinute,
+    this.startTime,
+    this.endTime,
   );
 }
 
-class Class {
+class ClassItem {
+  final int id;
   final String courseName;
   final String professor;
   final List<ClassTime> classTimes;
 
-  const Class({
+  const ClassItem({
+    required this.id,
     required this.courseName,
     required this.professor,
     required this.classTimes,
   });
 }
 
-class TimetableData {
+class TimetableItem {
   final int id;
   final String title;
-  final List<Class> classTimes;
+  final int year;
+  final Semester semester;
+  final List<int> classIds;
 
-  const TimetableData({
+  const TimetableItem({
     required this.id,
     required this.title,
-    required this.classTimes,
+    required this.year,
+    required this.semester,
+    required this.classIds,
+  });
+}
+
+class TimetableList {
+  final int id;
+  final int year;
+  final Semester semester;
+  final List<int> timetableIds;
+
+  const TimetableList({
+    required this.id,
+    required this.year,
+    required this.semester,
+    required this.timetableIds,
   });
 }

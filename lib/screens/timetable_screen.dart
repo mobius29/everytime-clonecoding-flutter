@@ -1,25 +1,28 @@
 import 'package:everytime_flutter/mocks/timetable/timetable.dart';
+import 'package:everytime_flutter/models/timetable.dart';
 import 'package:everytime_flutter/widgets/common/custom_navigation_bar.dart';
 import 'package:everytime_flutter/widgets/timetable/appbar.dart';
 import 'package:everytime_flutter/widgets/timetable/timetable.dart';
 import 'package:flutter/material.dart';
 
 class TimetableScreen extends StatelessWidget {
-  final int idx;
+  final int id;
+  TimetableScreen({Key? key, required this.id}) : super(key: key);
 
-  const TimetableScreen({Key? key, required this.idx}) : super(key: key);
+  late final TimetableItem timetableItem =
+      listTimetable.firstWhere((item) => item.id == id);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TimetableAppBar(
-        year: 2023,
-        semester: Semester.autumn,
-        title: "시간표 1",
+      appBar: TimetableAppBar(
+        year: timetableItem.year,
+        semester: timetableItem.semester,
+        title: timetableItem.title,
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [Timetable(timetable: MockTimetables.timetables[idx])],
+          children: [Timetable(classIds: timetableItem.classIds)],
         ),
       ),
       bottomNavigationBar: const CustomNavigationBar(

@@ -13,7 +13,7 @@ class App extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const HomeScreen(),
-          '/timetable': (context) => const TimetableScreen(idx: 0),
+          '/timetable': (context) => TimetableScreen(id: 0),
         });
   }
 }

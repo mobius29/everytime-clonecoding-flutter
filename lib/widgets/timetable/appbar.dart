@@ -1,17 +1,6 @@
 import 'package:everytime_flutter/themes/color.dart';
+import 'package:everytime_flutter/utils/constants/enums/date.dart';
 import 'package:flutter/material.dart';
-
-enum Semester {
-  spring(semester: "1"),
-  summer(semester: "여름"),
-  autumn(semester: "2"),
-  winter(semester: "겨울");
-
-  final String semester;
-  const Semester({
-    required this.semester,
-  });
-}
 
 class TimetableAppBar extends StatelessWidget implements PreferredSizeWidget {
   final int year;
