@@ -9,8 +9,7 @@ class Themes {
   static const _lightFillColor = CustomColors.black;
   static final Color _lightFocusColor = CustomColors.black.withOpacity(0.12);
 
-  static ThemeData lightThemeData =
-      themeData(lightColorScheme, _lightFocusColor);
+  static ThemeData lightThemeData = themeData(lightColorScheme, _lightFocusColor);
 
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(

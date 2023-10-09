@@ -1,5 +1,7 @@
 import 'package:everytime_flutter/mocks/timetable/timetable.dart';
 import 'package:everytime_flutter/models/timetable.dart';
+import 'package:everytime_flutter/screens/timetable/arguments.dart';
+import 'package:everytime_flutter/screens/timetable/timetable_screen.dart';
 import 'package:flutter/material.dart';
 
 class TimetableBlock extends StatelessWidget {
@@ -37,12 +39,28 @@ class TimetableBlock extends StatelessWidget {
             (e) => Container(
               alignment: Alignment.centerLeft,
               height: 50,
-              child: Row(
-                children: [
-                  Text(e.title, style: const TextStyle(fontSize: 18, color: Colors.black)),
-                  const SizedBox(width: 8),
-                  Container(child: null),
-                ],
+              child: ElevatedButton(
+                onPressed: () {
+                  TimetableArguments arguments = TimetableArguments(e.id);
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    TimetableScreen.routerName,
+                    (_) => false,
+                    arguments: arguments,
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  elevation: 0,
+                  padding: EdgeInsets.zero,
+                ),
+                child: Row(
+                  children: [
+                    Text(e.title, style: const TextStyle(fontSize: 18)),
+                    const SizedBox(width: 8),
+                    Container(child: null),
+                  ],
+                ),
               ),
             ),
           ),

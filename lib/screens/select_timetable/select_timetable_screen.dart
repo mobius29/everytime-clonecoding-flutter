@@ -15,8 +15,10 @@ class SelectTimetableScreen extends StatelessWidget {
         child: Column(
           children: listTimetableList
               .map(
-                (e) =>
-                    Padding(padding: const EdgeInsets.symmetric(vertical: 2), child: TimetableBlock(timetableList: e)),
+                (e) => Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2),
+                  child: TimetableBlock(timetableList: e),
+                ),
               )
               .toList(),
         ),
