@@ -1,3 +1,4 @@
+import 'package:everytime_flutter/widgets/select_timetable/appbar.dart';
 import 'package:flutter/material.dart';
 
 class SelectTimetableScreen extends StatelessWidget {
@@ -7,6 +8,7 @@ class SelectTimetableScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      appBar: SelectTimetableScreenAppbar(),
       body: Center(child: Text("Select Timetable")),
     );
   }
