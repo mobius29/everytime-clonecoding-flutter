@@ -13,7 +13,7 @@ class Timetable extends StatelessWidget {
   Timetable({Key? key, required this.classIds}) : super(key: key);
 
   static const double horizontalMargin = 16;
-  static const double verticalMargin = 24;
+  static const double verticalMargin = 12;
 
   static const double timeWidth = 20;
   static const double dayHeight = 20;
@@ -121,7 +121,7 @@ class Timetable extends StatelessWidget {
     final itemWidth = (MediaQuery.of(context).size.width - timeWidth) / cols;
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: horizontalMargin, vertical: verticalMargin),
+      margin: const EdgeInsets.fromLTRB(horizontalMargin, verticalMargin, horizontalMargin, 0),
       width: double.infinity,
       child: Stack(
         children: [

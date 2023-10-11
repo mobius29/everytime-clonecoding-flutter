@@ -3,6 +3,7 @@ import 'package:everytime_flutter/models/timetable.dart';
 import 'package:everytime_flutter/screens/timetable/arguments.dart';
 import 'package:everytime_flutter/widgets/common/custom_navigation_bar.dart';
 import 'package:everytime_flutter/widgets/timetable/appbar.dart';
+import 'package:everytime_flutter/widgets/timetable/grade_calculator.dart';
 import 'package:everytime_flutter/widgets/timetable/timetable.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class TimetableScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [Timetable(classIds: timetableItem.classIds)],
+          children: [Timetable(classIds: timetableItem.classIds), const GradeCalculator()],
         ),
       ),
       bottomNavigationBar: const CustomNavigationBar(
